@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2018%2F01%2F29%2FNew%20Document%2F</url>
+    <content type="text"><![CDATA[Welcome to MarkdownPad 2MarkdownPad is a full-featured Markdown editor for Windows. Built exclusively for MarkdownEnjoy first-class Markdown support with easy access to Markdown syntax and convenient keyboard shortcuts. Give them a try: Bold (Ctrl+B) and Italic (Ctrl+I) Quotes (Ctrl+Q) Code blocks (Ctrl+K) Headings 1, 2, 3 (Ctrl+1, Ctrl+2, Ctrl+3) Lists (Ctrl+U and Ctrl+Shift+O) See your changes instantly with LivePreview1Don&apos;t guess if your [hyperlink syntax](http://markdownpad.com) is correct; LivePreview will show you exactly what your document looks like every time you press a key. 2++2### ### Make it your ownFonts, color schemes, layouts and stylesheets are all 100% customizable so you can turn MarkdownPad into your perfect editor. A robust editor for advanced Markdown users 1.MarkdownPad supports multiple Markdown processing engines, including standard Markdown, Markdown Extra (with Table support) and GitHub Flavored Markdown. With a tabbed document interface, PDF export, a built-in image uploader, session management, spell check, auto-save, syntax highlighting and a built-in CSS management interface, there’s no limit to what you can do with MarkdownPad.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F01%2F27%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2017%2F06%2F12%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 但是公司Quick StartCreate a new post Name Academy score Harry Potter Gryffindor 90 Hermione Granger Gryffindor 100 Draco Malfoy Slytherin 90 但是郭德纲阿德森敢死队 山东分公司 df低功耗的高广东核电规划 更好地规划的高规范化 1234567#include &lt;iostream&gt; using namespace std; int main() &#123; cout &lt;&lt; "Hello World!" &lt;&lt; endl; return 0; &#125; gfgd饭店 12$ hexo new &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhhnew &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhh More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2018%2F01%2F29%2FNew%20Document%2F</url>
+    <title><![CDATA[CCNA 1-OSI、TCP/IP参考模型与通信原理]]></title>
+    <url>%2F2018%2F01%2F31%2FCCNA%20OSI%20TCPIP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。 1. OSI参考模型区分ISO：国际标准化组织（International Organization for Standardization）OSI：开放系统互联（Open System Interconnection）IOS：互联网络操作系统（Internetwork Operating System） 目的开发出OSI参考模型的主要目的是为了解决多厂商设备互联时的兼容问题，使得网络通信简单化、层次化。 模型为方便学习，应用层、表示层、会话层统一叫做应用层。应用层：为用户访问网络提供接口。 代表协议：Telnet、SMTP、HTTP、FTP、tftp、RIP、BGP等。传输层：为数据传输提供可靠或不可靠的连接服务。 代表协议：TCP、UDP、OSPF、EIGRP、GRE等。网络层：IP寻址（逻辑寻址)。 代表协议：IP、ICMP、IGMP等。数据链路层：MAC寻址（物理地址）。 代表协议：Ethernet、HDLC、PPP、Frame-Relay、ATM等。物理层：定义了物理介质的机械和电气特性。如，RJ-45、RJ-11等。 2. 常用包头结构TCP/IP协议族OSI参考模型折中TCP/IP模型应用层应用层应用层表示层会话层传输层传输层传输层网络层网络层Internet层数据链路层数据链路层网络接入层物理层物理层 TCPTCP数据头：20Bytes，10个字段。常见端口号： FTPTelnetSMTPDNS DNS TFTP SNMP RIP 21 23 25 53 53 69 161 520 TCPUDP IPIP数据头：20Bytes，12个字段。常见协议号： TCPUDPEIGRPOSPF6178889 帧数据帧格式：主要两种，DIX Ethernet V2 标准和IEEE 的 802.3 标准。常见协议号： IPv4IPv6ARPSNMPPPP0x08000x86DD0x08060x814C0x880B 3. 通信原理路由交换路由：不同子网间的通信。路由器基于数据包中目标IP地址查路由表，以确定出站口，路由表中保存的是目标网络与出站口之间的映射关系。路由表中如果有多条匹配，坚持最长匹配原则（最精确匹配原则）。交换：同一子网内的通信。交换机基于数据帧的目标MAC地址查找MAC表，MAC地址表中保存的是目标MAC地址与出站口之间的映射关系。ARP：ARP解析请求目的MAC为ff:ff:ff:ff:ff:ff的广播地址，其响应为单播地址，交换机会利用经过自身的ARP数据包动态学习MAC地址。 广播交换机对于广播帧，会全网泛洪（除了接受帧的入向端口）。路由器对于广播包，对于255.255.255.255广播包会丢弃处理。对于子网广播（如，192.168.10.0/24的广播地址192.168.10.255），路由器默认是丢弃的，但可对其配置实现转发。 封装与解封装封装（Encapsulation）：数据发送方负责加封装。解封装（(Decapsulation）：数据接收方负责解封装。 通信原理数据包通信过程中IP保持不变（NAT除外），改变的是MAC地址。传输层是自下而上的第一个端到端的层。IP用于逻辑链路控制，MAC用于物理链路控制。数据链路层和物理层控制物理平面，其数据库为mac-address-table；传输层和网络层控制逻辑平面，其数据库为router-table。 数据包如何穿过网络 通过自身子网掩码与目标IP做与运算发现和自己不再同一个网段，属于远程请求； 于是通过ARP询问网关MAC]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+        <tag>CCNA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试2]]></title>
+    <url>%2F2018%2F01%2F30%2FNew%20Document%2F</url>
     <content type="text"><![CDATA[Welcome to MarkdownPad 2MarkdownPad is a full-featured Markdown editor for Windows. Built exclusively for MarkdownEnjoy first-class Markdown support with easy access to Markdown syntax and convenient keyboard shortcuts. Give them a try: Bold (Ctrl+B) and Italic (Ctrl+I) Quotes (Ctrl+Q) Code blocks (Ctrl+K) Headings 1, 2, 3 (Ctrl+1, Ctrl+2, Ctrl+3) Lists (Ctrl+U and Ctrl+Shift+O) See your changes instantly with LivePreview1Don&apos;t guess if your [hyperlink syntax](http://markdownpad.com) is correct; LivePreview will show you exactly what your document looks like every time you press a key. 2++2### ### Make it your ownFonts, color schemes, layouts and stylesheets are all 100% customizable so you can turn MarkdownPad into your perfect editor. A robust editor for advanced Markdown users 1.MarkdownPad supports multiple Markdown processing engines, including standard Markdown, Markdown Extra (with Table support) and GitHub Flavored Markdown. With a tabbed document interface, PDF export, a built-in image uploader, session management, spell check, auto-save, syntax highlighting and a built-in CSS management interface, there’s no limit to what you can do with MarkdownPad.]]></content>
+      <categories>
+        <category>Web安全</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+        <tag>网络</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F06%2F12%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 但是公司Quick StartCreate a new post Name Academy score Harry Potter Gryffindor 90 Hermione Granger Gryffindor 100 Draco Malfoy Slytherin 90 但是郭德纲阿德森敢死队 山东分公司 df低功耗的高广东核电规划 更好地规划的高规范化 1234567#include &lt;iostream&gt; using namespace std; int main() &#123; cout &lt;&lt; "Hello World!" &lt;&lt; endl; return 0; &#125; gfgd饭店 12$ hexo new &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhhnew &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhh More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
   </entry>
 </search>

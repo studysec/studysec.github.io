@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="网络,CCNA," />
+  <meta name="keywords" content="CCNA,网络," />
 
 
 
@@ -80,19 +80,17 @@
 
 
 <meta name="description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
-<meta name="keywords" content="网络,CCNA">
+<meta name="keywords" content="CCNA,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CCNA 1-OSI、TCP&#x2F;IP参考模型与通信原理">
 <meta property="og:url" content="http://yoursite.com/2018/01/31/CCNA OSI TCPIP参考模型与通信原理/index.html">
 <meta property="og:site_name" content="SecLearner">
 <meta property="og:description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://images/pasted-2.png/">
-<meta property="og:updated_time" content="2018-01-31T12:28:29.836Z">
+<meta property="og:updated_time" content="2018-01-31T12:33:13.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CCNA 1-OSI、TCP&#x2F;IP参考模型与通信原理">
 <meta name="twitter:description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
-<meta name="twitter:image" content="http://images/pasted-2.png/">
 
 
 
@@ -415,8 +413,7 @@
 <h3 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h3><p>交换机对于广播帧，会全网泛洪（除了接受帧的入向端口）。<br>路由器对于广播包，对于255.255.255.255广播包会丢弃处理。对于子网广播（如，192.168.10.0/24的广播地址192.168.10.255），路由器默认是丢弃的，但可对其配置实现转发。</p>
 <h3 id="封装与解封装"><a href="#封装与解封装" class="headerlink" title="封装与解封装"></a>封装与解封装</h3><p><strong>封装（Encapsulation）：</strong>数据发送方负责加封装。<br><strong>解封装（(Decapsulation）：</strong>数据接收方负责解封装。</p>
 <h3 id="通信原理"><a href="#通信原理" class="headerlink" title="通信原理"></a>通信原理</h3><p>数据包通信过程中IP保持不变（NAT除外），改变的是MAC地址。传输层是自下而上的第一个端到端的层。IP用于<strong>逻辑链路</strong>控制，MAC用于<strong>物理链路</strong>控制。<br>数据链路层和物理层控制物理平面，其数据库为<strong>mac-address-table</strong>；传输层和网络层控制逻辑平面，其数据库为<strong>router-table</strong>。</p>
-<h3 id="数据包如何穿过网络"><a href="#数据包如何穿过网络" class="headerlink" title="数据包如何穿过网络"></a>数据包如何穿过网络</h3><p><img src="\\images\pasted-2.png\" alt="upload successful"></p>
-<ol>
+<h3 id="数据包如何穿过网络"><a href="#数据包如何穿过网络" class="headerlink" title="数据包如何穿过网络"></a>数据包如何穿过网络</h3><ol>
 <li>通过自身子网掩码与目标IP做<strong>与运算</strong>发现和自己不再同一个网段，属于远程请求；</li>
 <li>于是通过ARP询问网关MAC</li>
 </ol>
@@ -437,9 +434,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
-          
             <a href="/tags/CCNA/" rel="tag"><i class="fa fa-tag"></i> CCNA</a>
+          
+            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
           
         </div>
       
@@ -563,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

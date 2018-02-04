@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
+<meta name="description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
 <meta name="keywords" content="CCNA,网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CCNA简明笔记 1-分层模型与通信原理">
-<meta property="og:url" content="http://yoursite.com/2018/01/31/CCNA简明笔记 1-分层模型与通信原理/index.html">
+<meta property="og:title" content="CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/CCNA简明笔记-3/index.html">
 <meta property="og:site_name" content="SecLearner">
-<meta property="og:description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
+<meta property="og:description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-31T14:36:17.928Z">
+<meta property="og:updated_time" content="2018-02-04T13:43:55.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CCNA简明笔记 1-分层模型与通信原理">
-<meta name="twitter:description" content="前言 OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。">
+<meta name="twitter:title" content="CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议">
+<meta name="twitter:description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/31/CCNA简明笔记 1-分层模型与通信原理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/31/CCNA简明笔记-3/"/>
 
 
 
 
 
-  <title>CCNA简明笔记 1-分层模型与通信原理 | SecLearner</title>
+  <title>CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议 | SecLearner</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/CCNA简明笔记 1-分层模型与通信原理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/CCNA简明笔记-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ivan">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CCNA简明笔记 1-分层模型与通信原理</h1>
+          <h1 class="post-title" itemprop="name headline">CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议</h1>
         
 
         <div class="post-meta">
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T00:23:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T17:41:00+08:00">
                 2018-01-31
               </time>
             
@@ -392,39 +392,43 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>OSI参考模型以及每一层功能；TCP/IP参考模型、主要包结构以及常见端口号和协议号；网络通信原理。</p>
+<p>二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。<br><a id="more"></a></p>
 </blockquote>
-<a id="more"></a>
-<h2 id="1-OSI参考模型"><a href="#1-OSI参考模型" class="headerlink" title="1. OSI参考模型"></a>1. OSI参考模型</h2><h3 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h3><p><strong>ISO：</strong>国际标准化组织（International Organization for Standardization）<br><strong>OSI：</strong>开放系统互联（Open System Interconnection）<br><strong>IOS：</strong>互联网络操作系统（Internetwork Operating System）</p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>开发出OSI参考模型的主要目的是为了解决多厂商设备互联时的<strong>兼容问题</strong>，使得网络通信<strong>简单化、层次化</strong>。</p>
-<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>为方便学习，应用层、表示层、会话层统一叫做应用层。<br><strong>应用层：</strong>为用户访问网络提供接口。 代表协议：Telnet、SMTP、HTTP、FTP、tftp、RIP、BGP等。<br><strong>传输层：</strong>为数据传输提供可靠或不可靠的连接服务。 代表协议：TCP、UDP、OSPF、EIGRP、GRE等。<br><strong>网络层：</strong>IP寻址（逻辑寻址)。 代表协议：IP、ICMP、IGMP等。<br><strong>数据链路层：</strong>MAC寻址（物理地址）。 代表协议：Ethernet、HDLC、PPP、Frame-Relay、ATM等。<br><strong>物理层：</strong>定义了物理介质的机械和电气特性。如，RJ-45、RJ-11等。</p>
-<h2 id="2-常用包头结构"><a href="#2-常用包头结构" class="headerlink" title="2. 常用包头结构"></a>2. 常用包头结构</h2><h3 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h3><html><head><title></title></head><body><table><tr><td>OSI参考模型</td><td>折中</td><td>TCP/IP模型</td></tr><tr><td>应用层</td><td rowspan="3">应用层</td><td rowspan="3">应用层</td></tr><tr><td>表示层</td></tr><tr><td>会话层</td></tr><tr><td>传输层</td><td>传输层</td><td>传输层</td></tr><tr><td>网络层</td><td>网络层</td><td>Internet层</td></tr><tr><td>数据链路层</td><td>数据链路层</td><td rowspan="2">网络接入层</td></tr><tr><td>物理层</td><td>物理层</td></tr></table></body></html>
+<h2 id="1-二进制基础"><a href="#1-二进制基础" class="headerlink" title="1. 二进制基础"></a>1. 二进制基础</h2><p><strong>2进制-&gt;10进制：</strong>2的幂次方求和<br>10011010-&gt;2^7+2^4+2^3+2^1=154<br><strong>2进制-&gt;16进制：</strong>4位一组，转16进制<br>10011010-&gt;1001|1010=9A<br><strong>10进制-&gt;2进制：</strong>除2取余，反向排序<br>154-&gt;10011010<br><strong>10进制-&gt;16进制：</strong>除16取余，反向排序<br>154-&gt;9A<br><strong>16进制-&gt;2进制：</strong>每1位对应转换为4位的2进制数<br>9A-&gt;1001|1010<br><strong>16进制-&gt;10进制:</strong>16的幂次方求和<br>9A-&gt;9*16^1+10*16^0=154</p>
+<h2 id="2-IP编址与网络规划"><a href="#2-IP编址与网络规划" class="headerlink" title="2. IP编址与网络规划"></a>2. IP编址与网络规划</h2><h3 id="2-1-IP编址"><a href="#2-1-IP编址" class="headerlink" title="2.1 IP编址"></a>2.1 IP编址</h3><h4 id="5类"><a href="#5类" class="headerlink" title="5类"></a>5类</h4><table><tr><td width="10%">类</td><td width="10%">起始</td><td>地址范围</td><td width="10%">掩码</td><td>功能</td></tr><tr><td>A</td><td>0</td><td>0.0.0.0-127.255.255.255</td><td>/8</td><td rowspan="3">用于Internet的单播通信</td></tr><tr><td>B</td><td>10</td><td>128.0.0.0-191.255.255.255</td><td>/16</td></tr><tr><td>C</td><td>110</td><td>192.0.0.0-223.255.255.255</td><td>/24</td></tr><tr><td>D</td><td>1110</td><td>224.0.0.0-239.255.255.255</td><td>无</td><td>用于组播</td></tr><tr><td>E</td><td>1111</td><td>240.0.0.0-255.255.255.255</td><td>无</td><td>科研保留地址</td></tr></table>
 
-<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p><strong>TCP数据头：</strong>20Bytes，10个字段。常见<strong>端口号：</strong></p>
-<table><tr><td>FTP</td><td>Telnet</td><td>SMTP</td><td>DNS</td> <td>DNS</td> <td>TFTP</td> <td>SNMP</td> <td>RIP</td> </tr><tr><td>21</td> <td>23</td> <td>25</td> <td>53</td> <td>53</td> <td>69</td> <td>161</td> <td>520</td> </tr><tr><td colspan="4">TCP</td><td colspan="4">UDP</td> </tr></table>
+<p>参照<a href="https://en.wikipedia.org/wiki/Classful_network" target="_blank" rel="noopener">wiki百科</a><br><code>0.0.0.0/8</code>属于A类的保留地址，不允许使用<br><code>127.0.0.0/8</code>属于A类的保留地址，用于loopback环回地址<br>每个网络的可用主机数是<code>2^N-2</code>，N代表可用主机位数，<code>-2</code>是因为全0主机表示网络地址，全1主机表示该网络的广播地址；比如C类地址可用主机位数是8位，那么可用主机数是2^8-2=256-2=254<br>172.16.0.0/16属于<strong>主类网络</strong>，C类； 172.16.10.0/24属于<strong>子类网络</strong>； 172.0.0.0/8属于<strong>超网</strong></p>
+<h4 id="特殊IP"><a href="#特殊IP" class="headerlink" title="特殊IP"></a>特殊IP</h4><table><tr><td width="10%">网络号</td><td width="15%">主机号</td><td width="10%">SRC</td><td width="10%">DST</td><td>代表的意思</td></tr><tr><td>0</td><td>0</td><td>可以</td><td>不可</td><td>本网络上的本主机，主机的DHCP请求时的源地址0.0.0.0</td></tr><tr><td>0</td><td>host-id</td><td>可以</td><td>不可</td><td>本网络上某个主机host-id</td></tr><tr><td>全1</td><td>全1</td><td>不可</td><td>可以</td><td>只在本网络上进行广播（路由器不转发）</td></tr><tr><td>net-id</td><td>全1</td><td>不可</td><td>可以</td><td>对net-id网络上的所有主机广播</td></tr><tr><td>127</td><td>非全0/非全1</td><td>可以</td><td>可以</td><td>用作本地软件环回测试</td></tr></table>
 
-<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p><strong>IP数据头：</strong>20Bytes，12个字段。常见<strong>协议号：</strong></p>
-<table><tr><td>TCP</td><td>UDP</td><td>EIGRP</td><td>OSPF</td></tr><tr><td>6</td><td>17</td><td>88</td><td>89</td></tr></table>
+<p>SRC表示是否可用于源地址；DST表示是否可用于目的地址</p>
+<h4 id="私有IP"><a href="#私有IP" class="headerlink" title="私有IP"></a>私有IP</h4><table><tr><td width="10%">类</td><td>私有地址范围</td><td width="10%">掩码</td></tr><tr><td>A</td><td>10.0.0.0-10.255.255.255</td><td>/8</td></tr><tr><td>B</td><td>172.16.0.0-172.31.255.255</td><td>/12</td></tr><tr><td>C</td><td>192.168.0.0-192.168.255.255</td><td>/16</td></tr></table>
 
-<h3 id="帧"><a href="#帧" class="headerlink" title="帧"></a>帧</h3><p><strong>数据帧格式：</strong>主要两种，DIX Ethernet V2 标准和IEEE 的 802.3 标准。常见<strong>协议号：</strong></p>
-<table><tr><td>IPv4</td><td>IPv6</td><td>ARP</td><td>SNMP</td><td>PPP</td></tr><tr><td>0x0800</td><td>0x86DD</td><td>0x0806</td><td>0x814C</td><td>0x880B</td></tr></table>
+<h3 id="2-2-VLSM"><a href="#2-2-VLSM" class="headerlink" title="2.2 VLSM"></a>2.2 VLSM</h3><p>CIDR和VLSM都是为打破传统的以类（class）为标准的地址划分方法，缓解IP地址紧缺而出现的<br><strong>VLSM：</strong>Variable Length Subnet Mask，可变长子网掩码，就是网络子网化的过程（即2=1+1）；划分的子网都属于同一个主类网络，只是子网掩码长度不一样。VLSM能按照需要的地址数目来分配地址段，最有效的利用现有的地址空间。缺点是：使得路由表变大，消耗硬件资源。<br>VLSM的原理是：根据实际中需要的网络数，从主机位借用一定的位数变为子网位。但到底借用多少位，要从网络数和一个网络内需要的主机数两个角度考虑，兼顾二者。<br><strong>举例</strong><br>有网段172.16.0.0/16，某网络三个区域（每个区域最多120台主机），有三条路由器直连线路，说明需要3个至少包含120个有效主机地址的子网，和3个至少包含2个有效主机地址的子网</p>
+<table><tr><td>子网</td><td width="20%">起始IP</td><td width="20%">最后IP</td><td width="10%">掩码</td><td width="20%">IP个数</td></tr><tr><td bgcolor="#778899">172.16.00000000.0 0000000</td><td bgcolor="#778899">172.16.0.0</td><td bgcolor="#778899">172.16.255.255</td><td bgcolor="#778899">/16</td><td bgcolor="#778899">2^16=65536</td></tr><tr><td>172.16.00000000.0|0000000</td><td>172.16.0.0</td><td>172.16.0.127</td><td>/25</td><td bgcolor="#9ACD32">128</td></tr><tr><td>172.16.00000000.1|0000000</td><td>172.16.0.128</td><td>172.16.0.255</td><td>/25</td><td bgcolor="#9ACD32">128</td></tr><tr><td>172.16.00000001.0|0000000</td><td>172.16.1.0</td><td>172.16.1.127</td><td>/25</td><td bgcolor="#9ACD32">128</td></tr><tr><td>172.16.00000001.1|0000000</td><td>172.16.1.128</td><td>172.16.1.255</td><td>/25</td><td>128</td></tr><tr><td colspan="3">172.16.00000010.0|0000000-172.16.11111111.255 剩余IP(2进制)</td><td>/25</td><td></td></tr><tr><td colspan="3">172.16.2.0-172.16.255.255 剩余IP(10进制)</td><td>/25</td><td bgcolor="#9ACD32">65024</td></tr><tr><td bgcolor="#778899">172.16.00000001.1|0000000</td><td bgcolor="#778899">172.16.1.128</td><td bgcolor="#778899">172.16.1.255</td><td bgcolor="#778899">/25</td><td bgcolor="#778899">128</td></tr><tr><td>172.16.00000001.1|00000|00</td><td>172.16.1.128</td><td>172.16.1.131</td><td>/30</td><td bgcolor="#9ACD32">4</td></tr><tr><td>172.16.00000001.1|00001|00</td><td>172.16.1.132</td><td>172.16.1.135</td><td>/30</td><td bgcolor="#9ACD32">4</td></tr><tr><td>172.16.00000001.1|00010|00</td><td>172.16.1.136</td><td>172.16.1.139</td><td>/30</td><td bgcolor="#9ACD32">4</td></tr><tr><td colspan="3">172.16.00000001.1|00011|00-172.16.00000001.255 剩余IP(2进制)</td><td>/30</td><td></td></tr><tr><td colspan="3">12.16.1.140-172.16.1.255 剩余IP(10进制)</td><td>/30</td><td bgcolor="#9ACD32">116</td></tr></table>
 
-<h2 id="3-通信原理"><a href="#3-通信原理" class="headerlink" title="3. 通信原理"></a>3. 通信原理</h2><h3 id="IP地址和MAC地址"><a href="#IP地址和MAC地址" class="headerlink" title="IP地址和MAC地址"></a>IP地址和MAC地址</h3><p><strong>IP地址：</strong>32位，点分十进制。<br><strong>MAC地址：</strong>十六进制数表示，共六个字节（48位），其中，前三个字节（高24位）是由IEEE的注册管理机构给不同厂家分配的代码，区分了不同的厂家。</p>
-<h3 id="路由交换"><a href="#路由交换" class="headerlink" title="路由交换"></a>路由交换</h3><p><strong>路由：</strong>不同子网间的通信。<br>路由器基于数据包中目标IP地址查路由表，以确定出站口，路由表中保存的是目标网络与出站口之间的映射关系。路由表中如果有多条匹配，坚持最长匹配原则（最精确匹配原则）。<br><strong>交换：</strong>同一子网内的通信。<br>交换机基于数据帧的目标MAC地址查找MAC表，MAC地址表中保存的是目标MAC地址与出站口之间的映射关系。<br><strong>ARP：</strong>ARP解析请求目的MAC为ff:ff:ff:ff:ff:ff的广播地址，其响应为单播地址，交换机会利用经过自身的ARP数据包动态学习MAC地址。</p>
-<h3 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h3><p>交换机对于广播帧，会全网泛洪（除了接受帧的入向端口）。<br>路由器对于广播包，对于255.255.255.255广播包会丢弃处理。对于子网广播（如，192.168.10.0/24的广播地址192.168.10.255），路由器默认是丢弃的，但可对其配置实现转发。</p>
-<h3 id="封装与解封装"><a href="#封装与解封装" class="headerlink" title="封装与解封装"></a>封装与解封装</h3><p><strong>封装（Encapsulation）：</strong>数据发送方负责加封装。<br><strong>解封装（(Decapsulation）：</strong>数据接收方负责解封装。</p>
-<h3 id="通信原理"><a href="#通信原理" class="headerlink" title="通信原理"></a>通信原理</h3><p>数据包通信过程中IP保持不变（NAT除外），改变的是MAC地址。传输层是自下而上的第一个端到端的层。IP用于<strong>逻辑链路</strong>控制，MAC用于<strong>物理链路</strong>控制。<br>数据链路层和物理层控制物理平面，其数据库为<strong>mac-address-table</strong>；传输层和网络层控制逻辑平面，其数据库为<strong>router-table</strong>。</p>
-<h3 id="数据包如何穿过网络"><a href="#数据包如何穿过网络" class="headerlink" title="数据包如何穿过网络"></a>数据包如何穿过网络</h3><p><strong>拓扑图</strong></p>
-<p><strong>需求：</strong> PC1要与PC2通信<br><strong>注释：</strong> <strong>PC1</strong>的IP和MAC分别是IP_PC1、MAC_PC1 ，<strong>PC2</strong>的IP和MAC分别是IP_PC2、MAC_PC2，路由器<strong>E1口</strong>的IP和MAC分别是IP1_R、MAC1_R，<strong>E2口</strong>的IP和MAC分别是IP2_R、MAC2_R。<br><strong>通信过程如下：</strong></p>
-<ol>
-<li>通过自身子网掩码与目标IP做<strong>与运算</strong>发现和自己不在同一个网段，属于远程请求，需发到网关；</li>
-<li>于是通过ARP询问网关MAC，网关响应请求；</li>
-<li>PC1发送数据包[<code>IP_PC1,MAC_PC1</code>,<code>IP_PC2,MAC1_R</code>]，发到网关路由器E1口；</li>
-<li>路由器查看目的地址是<code>IP_PC2</code>，查找路由表，需走E2口；</li>
-<li>路由器封装数据包之前需要知道PC2的MAC地址，通过ARP请求得到；</li>
-<li>路由器封装数据包[<code>IP_PC1,MAC2_R</code>,<code>IP_PC2,MAC_PC2</code>]，从E2口扔出；</li>
-<li>PC2收到数据包，并作出应答。</li>
-</ol>
+<p>首先将172.16.0.0/16划分出/25（每个子网128个IP）；120台主机的网段只有三个，所以可对第四个子网172.16.1.128/25再划分子网；所得子网中取3个网段用于题中的三条路由器直连线路；两次划分子网都剩余大量未使用的IP地址。<br>IP个数：128+128+128+65024+4+4+4+116=65536</p>
+<h3 id="2-3-CIDR"><a href="#2-3-CIDR" class="headerlink" title="2.3 CIDR"></a>2.3 CIDR</h3><p><strong>CIDR：</strong>Classless Inter-Domain Routing，无类别域间路由，可以看成是VLSM的逆过程（1+1=2）,也可以叫做手工路由汇总或超网汇总，<strong>取最长的相同位数做掩码</strong>。<br>路由汇总减少了路由条目；减轻了CPU和内存的负载，加快了网络收敛的速度，减少了路由翻动的可能性。CIDR不被RIPV1和IGRP支持，因为这两个路由协议只支持自动汇总，并且在传递路由消息时不传递子网掩码，而CIDR需用子网掩码。<br><strong>举例</strong><br>如下5个IP，做汇总</p>
+<table><tr><td width="10%">IP1</td><td>192.68.49.0/24</td><td>192.68.00110|001.0/24</td></tr><tr><td>IP2</td><td>192.68.50.0/24</td><td>192.68.00110|010.0/24</td></tr><tr><td>IP3</td><td>192.68.52.0/24</td><td>192.68.00110|100.0/24</td></tr><tr><td>IP4</td><td>192.68.53.0/24</td><td>192.68.00110|101.0/24</td></tr><tr><td>IP5</td><td>192.68.55.0/24</td><td>192.68.00110|111.0/24</td></tr><tr><td>汇总</td><td>197.68.48.0/21</td><td>192.68.00110 000.0/21</td></tr></table>
+
+<h2 id="3-路由概述和路由协议分类"><a href="#3-路由概述和路由协议分类" class="headerlink" title="3. 路由概述和路由协议分类"></a>3. 路由概述和路由协议分类</h2><h3 id="3-1-路由概述"><a href="#3-1-路由概述" class="headerlink" title="3.1 路由概述"></a>3.1 路由概述</h3><p><strong>路由：</strong>数据包在网络中被路由器逐跳转发的过程<br><strong>路由器：</strong>用来执行路由功能的设备<br><strong>路由表：</strong>用来告诉路由器，数据包应该被如何转发的表<br><strong>路由表获取方式：</strong>链路层发现学习本地直连的路由、静态路由学习、动态路由学习<br><strong>路由协议：</strong>用来构建路由表中的路由条目的协议<br><strong>路由器路由表匹配原则：</strong>最长匹配原则或最精确匹配原则<br><strong>AD值：</strong>Administrative Distance，管理距离，路由协议传递路由信息的可信度，值越小越可信；主要用来不同种路由协议之间的选路；AD值是不传递的，本地有效，修改后只影响本机<br><strong>Metric值：</strong>度量值，同种路由协议内选路时比较Metric值，值越小越优秀；不同路由协议计算Metric的方法不同；Metric是可传递的，修改本机Metric值后会影响其他机器<br>查看路由表中会看到[AD/Metric]值<br><strong>常见路由协议AD值：</strong></p>
+<table><tr><td width="7%">路由协议</td><td>直连接口</td><td>静态路由</td><td>外部BGP</td><td>内部EIGRP</td><td>IGRP</td><td>ISIS</td><td>OSPF</td><td>RIP</td><td>外部EIGRP</td><td>内部BGP</td></tr><tr><td>管理距离</td><td>0</td><td>1</td><td>20</td><td>90</td><td>100</td><td>115</td><td>110</td><td>120</td><td>170</td><td>200</td></tr></table>
+
+<h3 id="3-2-路由协议分类"><a href="#3-2-路由协议分类" class="headerlink" title="3.2 路由协议分类"></a>3.2 路由协议分类</h3><p><strong>按照获取方式分类</strong><br>链路层发现：直连路由<br>静态路由：普通路由、默认路由<br>动态路由：RIPv1、RIPv2、EIGRP、OSPF、BGP、ISIS、ODR<br><strong>按IP地址类型分类</strong><br>有类路由Classful：RIPv1、IGRP（内部网关路由选择协议）<br>无类路由Classless：RIPv2、EIGRP、OSPF、ISIS、BGP、ODP（CISCO私有）<br><strong>按协议算法分类</strong><br>距离矢量（DV）：Distance Vector Routing Protocol，有RIPv1、RIPv2、BGP<br>链路状态（LS）：Link State Routing Protocol，有OSPF、ISIS、ODR<br>混合型：EIGRP（CISCO私有）<br><strong>按AS分类</strong><br>内部网关协议（IGP）：Interior Gateway Protocol，在AS内部进行工作，有RIPv1、RIPv2、EIGRP、OSPF、ISIS<br>外部网关协议（EGP）：Exterior Gateway Protocol，在AS之间运行的协议，有egp、BGP</p>
+<h3 id="3-3-路由协议比较"><a href="#3-3-路由协议比较" class="headerlink" title="3.3 路由协议比较"></a>3.3 路由协议比较</h3><p><strong>有类别路由协议和无类别路由协议</strong><br>有类别路由协议：发送路由更新时<strong>携带</strong>子网掩码<br>无类别路由协议：发送路由更新时<strong>不携带</strong>子网掩码<br>有类路由路由协议的路由汇总会导致路由器被汇总路由欺骗，误认为是等开销负载分担的路径，比如：<br>R1-10.1.1.0-（E1,R2,E2）-10.2.2.0-R3<br>R2会路由汇总，到达10.0.0.0网络可via E1和E2口，以为是等开销负载分担，欺骗路由器<br><strong>静态和动态</strong><br>静态路由Static：需手工配置，不能自动适应网络拓扑结构的改变<br>动态路由Dynamic：能自动适应网络拓扑结构的改变<br><strong>距离矢量、链路状态、混合型</strong><br>距离矢量路由协议：道听途说，直接发送路由表；<strong>距离</strong>表示你离我有多远；<strong>矢量</strong>表示方向<br>链路状态路由协议：不发送路由表，发送描述路由的参数；<strong>链路</strong>表示路由器自身直连的网段；<strong>状态</strong>表示参数，如ip-address、hello-interval、metric等一些列描述该接口参与路由协议的性能参数<br>混合型路由协议，只有EIGRP（前身是IGRP），比OSPF收敛快，EIGRP主要3个特点：</p>
+<ul>
+<li>直接发送路由表（DV的特点）</li>
+<li>有3张表，邻居表、拓扑表、路由表（LS的特点）</li>
+<li>非等开销负载分担（Rip是等开销负载分担）</li>
+</ul>
+<table><tr><td>距离矢量型路由协议DV</td><td>链路状态型路由协议LS</td></tr><tr><td>发送路由条目</td><td>发送LSA链路状态广播（L&amp;S）</td></tr><tr><td>不建立邻居关系</td><td>必须建立邻居关系</td></tr><tr><td>路由条目是道听途说</td><td>路由条目是自己计算出来的</td></tr><tr><td>只有一张路由表</td><td>邻居表、路由表、拓扑表</td></tr><tr><td>周期更新、广播更新、完整更新</td><td>触发更新、组播更新、增量更新</td></tr></table>
+
+<p>拓扑表保存所有路径；路由表保存最优路径<br>周期更新，每隔30s更新路由条目，各路由器更新间隔不一定同步；广播更新，255.255.255.255；完整更新，发送整张路由表<br>距离矢量路由协议，采用周期更新，导致收敛速度慢，收敛慢会导致路由环路，主要解决方法：水平分割、路由中毒、毒性逆转、计数到无穷大、抑制计时器、触发更新<br><strong>RIPv1和RIPv2</strong><br>RIPv1为有类别路由协议，不支持VLSM和CIDR；以广播的形式发送报文；不支持认证<br>RIPv2为无类别路由协议，支持VLSM，支持路由聚合与CIDR；支持以广播或组播（224.0.0.9）方式发送报文；支持明文认证和MD5密文认证</p>
+<h2 id="4-静态路由"><a href="#4-静态路由" class="headerlink" title="4. 静态路由"></a>4. 静态路由</h2><h3 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#ip route 172.16.1.0 255.255.255.0 172.16.2.1</span></span><br></pre></td></tr></table></figure>
+<p><code>172.16.1.0 255.255.255.0</code> 目标网络号和子网掩码<br><code>172.16.2.1</code> 下一跳路由器直连接口IP，也可配置本路由外出接口<br>数据包有去有回，路由条目也有去有回，注意检查两个方向是否都有路由</p>
+<h3 id="默认路由"><a href="#默认路由" class="headerlink" title="默认路由"></a>默认路由</h3><p>默认路由，也叫缺省路由，静态路由的一种，缺省路由就是在没有找到任何匹配的具体路由条目的情况下才使用的路由。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#ip route 0.0.0.0 0.0.0.0 172.16.2.1</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="5-RIP路由协议"><a href="#5-RIP路由协议" class="headerlink" title="5. RIP路由协议"></a>5. RIP路由协议</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#router rip </span></span><br><span class="line">R1(config-router)<span class="meta">#version 2</span></span><br><span class="line"><span class="comment">/*版本2，RIPv2*/</span></span><br><span class="line">R1(config-router)<span class="meta">#no auto-summary </span></span><br><span class="line"><span class="comment">/*rip默认是开启自动汇总的，需手动关闭*/</span></span><br><span class="line">R1(config-router)<span class="meta">#network 172.16.0.0</span></span><br><span class="line"><span class="comment">/*宣告参与RIP路由的接口*/</span></span><br><span class="line">R1(config-router)<span class="meta">#network 10.0.0.0</span></span><br><span class="line"><span class="comment">/*主类网络号*/</span></span><br></pre></td></tr></table></figure>
+<p><code>network 10.0.0.0</code> RIP的network宣告，必须写主类网络的形式,不能写子网的形式，比如10.1.1.0/24需要写10.0.0.0<br>EIGRP和RIPv2默认开启自动路由汇总，会将路由汇总到主类网络<br><strong>校验</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> ip protocols</span><br><span class="line"><span class="keyword">show</span> ip route</span><br><span class="line">debug ip rip</span><br><span class="line">undebug all</span><br><span class="line"><span class="comment">/*关闭所有debug*/</span></span><br><span class="line">debug all</span><br></pre></td></tr></table></figure></p>
+<p><code>show ip protocols</code> 可以查看更新间隔30s；AD值；可以看接口RIP版本（默认发v1，接受v1和v2）,一般需手工指定v2版本<br><code>debug all</code> 该命令会打开设备所有debug，极度危险，会使设备卡死</p>
 
       
     </div>
@@ -457,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/30/New Document/" rel="next" title="测试2">
-                <i class="fa fa-chevron-left"></i> 测试2
+              <a href="/2018/01/30/CCNA简明笔记-2/" rel="next" title="CCNA简明笔记 2-路由器&VLAN">
+                <i class="fa fa-chevron-left"></i> CCNA简明笔记 2-路由器&VLAN
               </a>
             
           </div>
@@ -466,6 +470,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/01/CCNA简明笔记 4/" rel="prev" title="CCNA简明笔记 4-EIGRP、OSPF、IPv6">
+                CCNA简明笔记 4-EIGRP、OSPF、IPv6 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -546,7 +554,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-OSI参考模型"><span class="nav-text">1. OSI参考模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区分"><span class="nav-text">区分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-常用包头结构"><span class="nav-text">2. 常用包头结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-text">TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP"><span class="nav-text">IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帧"><span class="nav-text">帧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-通信原理"><span class="nav-text">3. 通信原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址和MAC地址"><span class="nav-text">IP地址和MAC地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由交换"><span class="nav-text">路由交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播"><span class="nav-text">广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装与解封装"><span class="nav-text">封装与解封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通信原理"><span class="nav-text">通信原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据包如何穿过网络"><span class="nav-text">数据包如何穿过网络</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-二进制基础"><span class="nav-text">1. 二进制基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-IP编址与网络规划"><span class="nav-text">2. IP编址与网络规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-IP编址"><span class="nav-text">2.1 IP编址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5类"><span class="nav-text">5类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特殊IP"><span class="nav-text">特殊IP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#私有IP"><span class="nav-text">私有IP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-VLSM"><span class="nav-text">2.2 VLSM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-CIDR"><span class="nav-text">2.3 CIDR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-路由概述和路由协议分类"><span class="nav-text">3. 路由概述和路由协议分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-路由概述"><span class="nav-text">3.1 路由概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-路由协议分类"><span class="nav-text">3.2 路由协议分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-路由协议比较"><span class="nav-text">3.3 路由协议比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-静态路由"><span class="nav-text">4. 静态路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态路由"><span class="nav-text">静态路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认路由"><span class="nav-text">默认路由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-RIP路由协议"><span class="nav-text">5. RIP路由协议</span></a></li></ol></div>
             
 
           </div>

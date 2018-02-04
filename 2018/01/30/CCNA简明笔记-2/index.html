@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CCNA,网络," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="前言 路由器的启动；配置管理；CDP、ping、tracerout；VLAN。">
+<meta name="keywords" content="CCNA,网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/06/12/hello-world/index.html">
+<meta property="og:title" content="CCNA简明笔记 2-路由器&amp;VLAN">
+<meta property="og:url" content="http://yoursite.com/2018/01/30/CCNA简明笔记-2/index.html">
 <meta property="og:site_name" content="SecLearner">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="前言 路由器的启动；配置管理；CDP、ping、tracerout；VLAN。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-30T16:21:43.269Z">
+<meta property="og:updated_time" content="2018-02-03T07:15:05.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="CCNA简明笔记 2-路由器&amp;VLAN">
+<meta name="twitter:description" content="前言 路由器的启动；配置管理；CDP、ping、tracerout；VLAN。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/12/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/30/CCNA简明笔记-2/"/>
 
 
 
 
 
-  <title>Hello World | SecLearner</title>
+  <title>CCNA简明笔记 2-路由器&VLAN | SecLearner</title>
   
 
 
@@ -296,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/30/CCNA简明笔记-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ivan">
@@ -313,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">CCNA简明笔记 2-路由器&VLAN</h1>
         
 
         <div class="post-meta">
@@ -325,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T00:00:00+08:00">
-                2017-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T22:22:28+08:00">
+                2018-01-30
               </time>
             
 
@@ -390,49 +391,36 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h1 id="但是公司"><a href="#但是公司" class="headerlink" title="但是公司"></a>但是公司</h1><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">Academy</th>
-<th style="text-align:right">score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Harry Potter</td>
-<td style="text-align:center">Gryffindor</td>
-<td style="text-align:right">90</td>
-</tr>
-<tr>
-<td>Hermione Granger</td>
-<td style="text-align:center">Gryffindor</td>
-<td style="text-align:right">100</td>
-</tr>
-<tr>
-<td>Draco Malfoy</td>
-<td style="text-align:center">Slytherin</td>
-<td style="text-align:right">90</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>但是郭德纲阿德森敢死队</li>
-<li>山东分公司</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>路由器的启动；配置管理；CDP、ping、tracerout；VLAN。<br><a id="more"></a></p>
+</blockquote>
+<h2 id="1-路由器的启动"><a href="#1-路由器的启动" class="headerlink" title="1. 路由器的启动"></a>1. 路由器的启动</h2><h3 id="启动顺序"><a href="#启动顺序" class="headerlink" title="启动顺序"></a>启动顺序</h3><ol>
+<li>完成POST(加电自检，包括内存和接口)</li>
+<li>发现并且加载CISCO IOS软件</li>
+<li>寻找并加载路由器的配置文件</li>
+<li>如果上述正确完成，那么启动完毕</li>
 </ol>
-<p><code>df低功耗的高广东核电规划 更好地规划的高规范化</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World!"</span> &lt;&lt; <span class="built_in">endl</span>;   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>gfgd饭店</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhh</span><br><span class="line">new &quot;My New Post&quot;fdhfshhhhhhhhhhhhhhhhhhhhhhhhh</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="内部组件"><a href="#内部组件" class="headerlink" title="内部组件"></a>内部组件</h3><p><strong>RAM(随机存储器)</strong> — 执行包缓存，运行当前的配置文件和CISCO IOS，存储<strong>路由表</strong>的地方。<br><strong>ROM(只读存储器)</strong> — 执行POST（加电自检），ROM监控模式，<strong>MINI IOS</strong> (Rxboot)存储的地方。<br><strong>NVRAM(非易失性随机存储器)</strong> — 存储备份<strong>配置</strong>，配置寄存器(config register)的地方。<br><strong>Flash(闪存)</strong> — 存储<strong>IOS</strong>的地方；它也是非易失性的。它像一个文件系统，比NVRAM昂贵。</p>
+<h3 id="寄存器值"><a href="#寄存器值" class="headerlink" title="寄存器值"></a>寄存器值</h3><p><strong>0x2102：</strong>从Flash启动，同时读取NVRAM中的startup-config (工厂默认值)<br><strong>0x2142：</strong>从Flash启动，但不使用NVRAM中的startup-config (一般用于口令恢复)<br><strong>配置命令</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route(config)<span class="meta">#config-register 0x2102</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="2-配置管理"><a href="#2-配置管理" class="headerlink" title="2. 配置管理"></a>2. 配置管理</h2><h3 id="路由器模式"><a href="#路由器模式" class="headerlink" title="路由器模式"></a>路由器模式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route&gt;enable</span><br><span class="line"><span class="comment">/*用户命令模式*/</span></span><br><span class="line">Route<span class="meta">#configure terminal</span></span><br><span class="line"><span class="comment">/*特权模式*/</span></span><br><span class="line">Route(config)#</span><br><span class="line"><span class="comment">/*全局配置模式*/</span></span><br></pre></td></tr></table></figure>
+<p><code>exit</code>逐级退出；<code>end</code> = <code>ctrl+z</code>直接退到“ # ”特权模式；<code>disable</code>从特权模式退到用户命令模式。</p>
+<h3 id="保存删除配置"><a href="#保存删除配置" class="headerlink" title="保存删除配置"></a>保存删除配置</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> running-config </span><br><span class="line">= write terminal</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">startup</span>-config</span><br><span class="line"></span><br><span class="line">copy running-config <span class="keyword">startup</span>-config</span><br><span class="line">= write <span class="keyword">memory</span></span><br><span class="line">= wr</span><br><span class="line"></span><br><span class="line">erase running-config</span><br><span class="line"><span class="comment">/*清除配置*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">clear</span> ip route *</span><br><span class="line"><span class="comment">/*清除路由表*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="控制台线路命令"><a href="#控制台线路命令" class="headerlink" title="控制台线路命令"></a>控制台线路命令</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Router(config)<span class="meta">#no ip domain-lookup</span></span><br><span class="line"><span class="comment">/*关闭路由器的DNS解析*/</span></span><br><span class="line">Router(config)<span class="meta">#<span class="meta-keyword">line</span> console 0</span></span><br><span class="line">Router(config-line)<span class="meta">#logging synchronous</span></span><br><span class="line"><span class="comment">/*重新显示中断的控制台输入*/</span></span><br></pre></td></tr></table></figure>
+<p>路由器DNS解析：假如在CLI下输入了1个Cisco设备不能识别的命令,它会默认通过DNS来进行解析(它认为是主机名)，会话费较长时间而锁死命令行。可以telnet 192.168.1.1或者telnet hostnamexxx，设备会广播解析hostnamexxx。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Router(config)<span class="meta">#<span class="meta-keyword">line</span> console 0</span></span><br><span class="line"><span class="comment">/*设置Console接口密码*/</span></span><br><span class="line">Router(config-line)<span class="meta">#password 123456</span></span><br><span class="line">Router(config-line)<span class="meta">#login</span></span><br></pre></td></tr></table></figure></p>
+<p>注意，<strong>密码是允许尾部带空格的</strong>，不允许首部带空格.<br><code>ctrl+shift+6+6</code>可以终结一些正在执行的时间较久的命令（如ping、tracertoute）</p>
+<h3 id="配置远程登录（VTY）"><a href="#配置远程登录（VTY）" class="headerlink" title="配置远程登录（VTY）"></a>配置远程登录（VTY）</h3><p>远程登录允许远程通过Telnet、SSH等对路由进行远程访问和管理；路由必须配置特权密码，这样远程用户才能进入特权模式，否则远程用户连接上设备后是无法进入特权模式的。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route(config)<span class="meta">#<span class="meta-keyword">line</span> vty 0 4</span></span><br><span class="line"><span class="comment">/*设置允许5条并发线路对此路由的远程访问(0-4)*/</span></span><br><span class="line">Route(config-line)<span class="meta">#password ccna </span></span><br><span class="line">Route(config-line)<span class="meta">#login</span></span><br></pre></td></tr></table></figure></p>
+<p><code>login</code>作用是要求输入登录密码，如果是<code>no login</code>远程登录将不需要密码。<br>VTY（Virtual Teletype Terminal)虚拟终端。</p>
+<h3 id="其他查询"><a href="#其他查询" class="headerlink" title="其他查询"></a>其他查询</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route<span class="meta">#show ip interface brief</span></span><br><span class="line">Route<span class="meta">#show ip protocols </span></span><br><span class="line">Route<span class="meta">#show version</span></span><br><span class="line">Route<span class="meta">#show interfaces</span></span><br></pre></td></tr></table></figure>
+<p><code>show version</code> 可查看路由器型号，系统版本，映像文件，端口类型，寄存器值等<br><code>show interfaces</code> 可以查看接口是否双up，以及接口延迟、可靠性、负载、带宽以及MTU等参数</p>
+<h2 id="3-CDP、ping、tracerout"><a href="#3-CDP、ping、tracerout" class="headerlink" title="3. CDP、ping、tracerout"></a>3. CDP、ping、tracerout</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">R1<span class="meta">#show cdp entry *</span></span><br><span class="line">R1<span class="meta">#ping 10.0.0.1</span></span><br><span class="line"><span class="comment">/*测试连通性*/</span></span><br><span class="line">R1<span class="meta">#traceroute 3.3.3.3</span></span><br><span class="line"></span><br><span class="line">Type escape sequence to <span class="built_in">abort</span>.</span><br><span class="line">Tracing the route to <span class="number">3.3</span><span class="number">.3</span><span class="number">.3</span></span><br><span class="line"></span><br><span class="line">  <span class="number">1</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">60</span> msec <span class="number">36</span> msec <span class="number">12</span> msec</span><br><span class="line">  <span class="number">2</span> <span class="number">12.0</span><span class="number">.0</span><span class="number">.2</span> !A  !A  !A</span><br><span class="line">R1<span class="meta">#traceroute 3.3.3.3 probe 1</span></span><br><span class="line"></span><br><span class="line">Type escape sequence to <span class="built_in">abort</span>.</span><br><span class="line">Tracing the route to <span class="number">3.3</span><span class="number">.3</span><span class="number">.3</span></span><br><span class="line"></span><br><span class="line">  <span class="number">1</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">28</span> msec</span><br><span class="line">  <span class="number">2</span> <span class="number">12.0</span><span class="number">.0</span><span class="number">.2</span> !A</span><br></pre></td></tr></table></figure>
+<p><code>show cdp entry *</code> 可以查看邻居ID、邻居IP、邻居接口<br><code>traceroute</code> 默认每一跳尝试3次，通过参数<code>probe</code>可修改次数</p>
+<h2 id="4-VLAN"><a href="#4-VLAN" class="headerlink" title="4.VLAN"></a>4.VLAN</h2><h3 id="4-1-定义"><a href="#4-1-定义" class="headerlink" title="4.1 定义"></a>4.1 定义</h3><p><strong>VLAN</strong>（Virtual Local Area Network），虚拟局域网，将物理上分散的用户，在逻辑上构成一个整体。每个vlan相当于一个子网，一个vlan属于一个广播域。通过vlan创建虚拟工作组，<strong>方便管理</strong>，并且能<strong>分割广播域</strong>。</p>
+<h3 id="4-2-Trunk"><a href="#4-2-Trunk" class="headerlink" title="4.2 Trunk"></a>4.2 Trunk</h3><p>Trunk，主干、干道<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#interface fastEthernet 0/0</span></span><br><span class="line">R1(config-<span class="keyword">if</span>)<span class="meta">#switchport mode trunk </span></span><br><span class="line">R1(config-<span class="keyword">if</span>)<span class="meta">#exit</span></span><br><span class="line">R1(config)<span class="meta">#exit</span></span><br><span class="line">R1<span class="meta">#show interfaces trunk </span></span><br><span class="line"><span class="comment">/*查看哪些接口是Trunk类型，极其封装协议*/</span></span><br><span class="line">Port      Mode         Encapsulation  Status        Native vlan</span><br><span class="line">Fa0/<span class="number">0</span>     on           <span class="number">802.1</span>q         trunking      <span class="number">1</span></span><br><span class="line"></span><br><span class="line">Port      Vlans allowed on trunk</span><br><span class="line">Fa0/<span class="number">0</span>     <span class="number">1</span><span class="number">-1005</span></span><br><span class="line"></span><br><span class="line">Port      Vlans allowed <span class="keyword">and</span> active in management domain</span><br><span class="line">Fa0/<span class="number">0</span>     <span class="number">1</span></span><br><span class="line"></span><br><span class="line">Port      Vlans in spanning tree forwarding state <span class="keyword">and</span> <span class="keyword">not</span> pruned</span><br><span class="line">Fa0/<span class="number">0</span>     none</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-3-Trunk链路封装协议"><a href="#4-3-Trunk链路封装协议" class="headerlink" title="4.3 Trunk链路封装协议"></a>4.3 Trunk链路封装协议</h3><p>主要两种封装协议，<strong>ISL和802.1q（dot1q）</strong>，用在trunk链路上给数据帧打标，用以指明原始数据帧属于哪个vlan。<br><strong>ISL：</strong>cisco<strong>私有协议</strong>，在帧的外部首位添加标记<br><strong>802.1q：**</strong>公有协议**，在帧中间插入标记字段<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#interface fastEthernet 0/0</span></span><br><span class="line">R1(config-<span class="keyword">if</span>)<span class="meta">#switchport trunk encapsulation dot1q</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-4-VTP"><a href="#4-4-VTP" class="headerlink" title="4.4 VTP"></a>4.4 VTP</h3><p><strong>VTP</strong>（VLAN Trunking Protocol）：是VLAN中继协议，思科<strong>私有协议</strong>，用于设备间动态传递vlan号。有<strong>Server、Client、Transparent</strong>三种模式。VTP域也称为VLAN管理域，域内的每台交换机都必须使用相同的域名。<br><strong>Server：</strong>任何事都可以做，可对VLAN信息增删改，学习和转发相同域名的VTP消息<br><strong>Client：</strong>任何事都不能做，除了向Server学习<br><strong>Transparent：</strong>可转发VTP消息（透明穿过），自身创建的vlan只本地可见不饿传递，该模式本质是关闭VTP<br><strong>配置Server：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">R1<span class="meta">#vlan database </span></span><br><span class="line">R1(vlan)<span class="meta">#vtp domain ccna</span></span><br><span class="line"><span class="comment">/*配置vtp域名为ccna，同域要一致*/</span></span><br><span class="line">R1(vlan)<span class="meta">#vtp server </span></span><br><span class="line"><span class="comment">/*配置vtp模式*/</span></span><br><span class="line">R1(vlan)<span class="meta">#vlan 10</span></span><br><span class="line">R1(vlan)<span class="meta">#vlan 20</span></span><br><span class="line">R1(vlan)<span class="meta">#exit</span></span><br><span class="line">APPLY completed.</span><br><span class="line">Exiting....</span><br><span class="line">R1#</span><br><span class="line"><span class="comment">/*配置vlan时exit和abort的区别*/</span></span><br><span class="line">R1(vlan)<span class="meta">#abort </span></span><br><span class="line">Aborting....</span><br><span class="line">R1#</span><br></pre></td></tr></table></figure></p>
+<p><code>exit</code>是保存配置并退出；<code>abort</code>是取消并退出，不保存vlan配置。<br><strong>配置Client：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">R1<span class="meta">#vlan database </span></span><br><span class="line">R1(vlan)<span class="meta">#vtp domain ccna</span></span><br><span class="line">R1(vlan)<span class="meta">#vtp client </span></span><br><span class="line">R1(vlan)<span class="meta">#vlan 10</span></span><br><span class="line">R1(vlan)<span class="meta">#vlan 20</span></span><br><span class="line">R1(vlan)<span class="meta">#exit</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>校验:</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> vtp <span class="keyword">status</span></span><br><span class="line"><span class="keyword">show</span> vlan brief</span><br><span class="line"><span class="comment">/*真机使用命令*/</span></span><br><span class="line"><span class="keyword">show</span> vlan-<span class="keyword">switch</span> brief</span><br><span class="line"><span class="comment">/*模拟器中的命令*/</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-5-access-port访问端口"><a href="#4-5-access-port访问端口" class="headerlink" title="4.5 access-port访问端口"></a>4.5 access-port访问端口</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#interface fastEthernet 0/0</span></span><br><span class="line">R1(config-<span class="keyword">if</span>)<span class="meta">#switchport mode access</span></span><br><span class="line">R1(config-<span class="keyword">if</span>)<span class="meta">#switchport access vlan 22</span></span><br><span class="line"><span class="comment">/*指定接口所属的vlan*/</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -447,6 +435,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CCNA/" rel="tag"><i class="fa fa-tag"></i> CCNA</a>
+          
+            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
+          
+        </div>
+      
 
       
       
@@ -456,14 +452,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/29/CCNA简明笔记 1/" rel="next" title="CCNA简明笔记 1-分层模型与通信原理">
+                <i class="fa fa-chevron-left"></i> CCNA简明笔记 1-分层模型与通信原理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/30/New Document/" rel="prev" title="测试2">
-                测试2 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/31/CCNA简明笔记-3/" rel="prev" title="CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议">
+                CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -545,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#但是公司"><span class="nav-text">但是公司</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-路由器的启动"><span class="nav-text">1. 路由器的启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动顺序"><span class="nav-text">启动顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部组件"><span class="nav-text">内部组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器值"><span class="nav-text">寄存器值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置管理"><span class="nav-text">2. 配置管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器模式"><span class="nav-text">路由器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存删除配置"><span class="nav-text">保存删除配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制台线路命令"><span class="nav-text">控制台线路命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置远程登录（VTY）"><span class="nav-text">配置远程登录（VTY）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他查询"><span class="nav-text">其他查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CDP、ping、tracerout"><span class="nav-text">3. CDP、ping、tracerout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-VLAN"><span class="nav-text">4.VLAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-定义"><span class="nav-text">4.1 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Trunk"><span class="nav-text">4.2 Trunk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Trunk链路封装协议"><span class="nav-text">4.3 Trunk链路封装协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-VTP"><span class="nav-text">4.4 VTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-access-port访问端口"><span class="nav-text">4.5 access-port访问端口</span></a></li></ol></li></ol></div>
             
 
           </div>

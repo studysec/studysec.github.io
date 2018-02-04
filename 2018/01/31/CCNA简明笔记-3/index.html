@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CCNA,网络," />
+  <meta name="keywords" content="网络,CCNA," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
-<meta name="keywords" content="CCNA,网络">
+<meta name="keywords" content="网络,CCNA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议">
 <meta property="og:url" content="http://yoursite.com/2018/01/31/CCNA简明笔记-3/index.html">
 <meta property="og:site_name" content="SecLearner">
 <meta property="og:description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-04T13:43:55.303Z">
+<meta property="og:updated_time" content="2018-02-04T13:53:06.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CCNA简明笔记 3-IP编址、路由协议、静态和RIP路由协议">
 <meta name="twitter:description" content="前言 二进制基础；IP编址与网络规划（VLSM、CIDR）；路由概述和路由协议分类；静态路由协议；RIP路由协议。">
@@ -410,7 +410,7 @@
 <h3 id="2-3-CIDR"><a href="#2-3-CIDR" class="headerlink" title="2.3 CIDR"></a>2.3 CIDR</h3><p><strong>CIDR：</strong>Classless Inter-Domain Routing，无类别域间路由，可以看成是VLSM的逆过程（1+1=2）,也可以叫做手工路由汇总或超网汇总，<strong>取最长的相同位数做掩码</strong>。<br>路由汇总减少了路由条目；减轻了CPU和内存的负载，加快了网络收敛的速度，减少了路由翻动的可能性。CIDR不被RIPV1和IGRP支持，因为这两个路由协议只支持自动汇总，并且在传递路由消息时不传递子网掩码，而CIDR需用子网掩码。<br><strong>举例</strong><br>如下5个IP，做汇总</p>
 <table><tr><td width="10%">IP1</td><td>192.68.49.0/24</td><td>192.68.00110|001.0/24</td></tr><tr><td>IP2</td><td>192.68.50.0/24</td><td>192.68.00110|010.0/24</td></tr><tr><td>IP3</td><td>192.68.52.0/24</td><td>192.68.00110|100.0/24</td></tr><tr><td>IP4</td><td>192.68.53.0/24</td><td>192.68.00110|101.0/24</td></tr><tr><td>IP5</td><td>192.68.55.0/24</td><td>192.68.00110|111.0/24</td></tr><tr><td>汇总</td><td>197.68.48.0/21</td><td>192.68.00110 000.0/21</td></tr></table>
 
-<h2 id="3-路由概述和路由协议分类"><a href="#3-路由概述和路由协议分类" class="headerlink" title="3. 路由概述和路由协议分类"></a>3. 路由概述和路由协议分类</h2><h3 id="3-1-路由概述"><a href="#3-1-路由概述" class="headerlink" title="3.1 路由概述"></a>3.1 路由概述</h3><p><strong>路由：</strong>数据包在网络中被路由器逐跳转发的过程<br><strong>路由器：</strong>用来执行路由功能的设备<br><strong>路由表：</strong>用来告诉路由器，数据包应该被如何转发的表<br><strong>路由表获取方式：</strong>链路层发现学习本地直连的路由、静态路由学习、动态路由学习<br><strong>路由协议：</strong>用来构建路由表中的路由条目的协议<br><strong>路由器路由表匹配原则：</strong>最长匹配原则或最精确匹配原则<br><strong>AD值：</strong>Administrative Distance，管理距离，路由协议传递路由信息的可信度，值越小越可信；主要用来不同种路由协议之间的选路；AD值是不传递的，本地有效，修改后只影响本机<br><strong>Metric值：</strong>度量值，同种路由协议内选路时比较Metric值，值越小越优秀；不同路由协议计算Metric的方法不同；Metric是可传递的，修改本机Metric值后会影响其他机器<br>查看路由表中会看到[AD/Metric]值<br><strong>常见路由协议AD值：</strong></p>
+<h2 id="3-路由概述和路由协议分类"><a href="#3-路由概述和路由协议分类" class="headerlink" title="3. 路由概述和路由协议分类"></a>3. 路由概述和路由协议分类</h2><h3 id="3-1-路由概述"><a href="#3-1-路由概述" class="headerlink" title="3.1 路由概述"></a>3.1 路由概述</h3><p><strong>路由：</strong>数据包在网络中被路由器逐跳转发的过程<br><strong>路由器：</strong>用来执行路由功能的设备<br><strong>路由表：</strong>用来告诉路由器，数据包应该被如何转发的表<br><strong>路由表获取方式：</strong>链路层发现学习本地直连的路由、静态路由学习、动态路由学习<br><strong>路由协议：</strong>用来构建路由表中的路由条目的协议<br><strong>路由器路由表匹配原则：</strong>最长匹配原则或最精确匹配原则<br><strong>AD值：</strong>Administrative Distance，管理距离，路由协议传递路由信息的可信度，<strong>值越小越可信</strong>；主要用来不同种路由协议之间的选路；AD值是不传递的，本地有效，修改后只影响本机<br><strong>Metric值：</strong>度量值，同种路由协议内选路时比较Metric值，<strong>值越小越优秀</strong>；不同路由协议计算Metric的方法不同；Metric是可传递的，修改本机Metric值后会影响其他机器<br>查看路由表中会看到<strong>[AD/Metric]</strong>值<br><strong>常见路由协议AD值：</strong></p>
 <table><tr><td width="7%">路由协议</td><td>直连接口</td><td>静态路由</td><td>外部BGP</td><td>内部EIGRP</td><td>IGRP</td><td>ISIS</td><td>OSPF</td><td>RIP</td><td>外部EIGRP</td><td>内部BGP</td></tr><tr><td>管理距离</td><td>0</td><td>1</td><td>20</td><td>90</td><td>100</td><td>115</td><td>110</td><td>120</td><td>170</td><td>200</td></tr></table>
 
 <h3 id="3-2-路由协议分类"><a href="#3-2-路由协议分类" class="headerlink" title="3.2 路由协议分类"></a>3.2 路由协议分类</h3><p><strong>按照获取方式分类</strong><br>链路层发现：直连路由<br>静态路由：普通路由、默认路由<br>动态路由：RIPv1、RIPv2、EIGRP、OSPF、BGP、ISIS、ODR<br><strong>按IP地址类型分类</strong><br>有类路由Classful：RIPv1、IGRP（内部网关路由选择协议）<br>无类路由Classless：RIPv2、EIGRP、OSPF、ISIS、BGP、ODP（CISCO私有）<br><strong>按协议算法分类</strong><br>距离矢量（DV）：Distance Vector Routing Protocol，有RIPv1、RIPv2、BGP<br>链路状态（LS）：Link State Routing Protocol，有OSPF、ISIS、ODR<br>混合型：EIGRP（CISCO私有）<br><strong>按AS分类</strong><br>内部网关协议（IGP）：Interior Gateway Protocol，在AS内部进行工作，有RIPv1、RIPv2、EIGRP、OSPF、ISIS<br>外部网关协议（EGP）：Exterior Gateway Protocol，在AS之间运行的协议，有egp、BGP</p>
@@ -422,13 +422,13 @@
 </ul>
 <table><tr><td>距离矢量型路由协议DV</td><td>链路状态型路由协议LS</td></tr><tr><td>发送路由条目</td><td>发送LSA链路状态广播（L&amp;S）</td></tr><tr><td>不建立邻居关系</td><td>必须建立邻居关系</td></tr><tr><td>路由条目是道听途说</td><td>路由条目是自己计算出来的</td></tr><tr><td>只有一张路由表</td><td>邻居表、路由表、拓扑表</td></tr><tr><td>周期更新、广播更新、完整更新</td><td>触发更新、组播更新、增量更新</td></tr></table>
 
-<p>拓扑表保存所有路径；路由表保存最优路径<br>周期更新，每隔30s更新路由条目，各路由器更新间隔不一定同步；广播更新，255.255.255.255；完整更新，发送整张路由表<br>距离矢量路由协议，采用周期更新，导致收敛速度慢，收敛慢会导致路由环路，主要解决方法：水平分割、路由中毒、毒性逆转、计数到无穷大、抑制计时器、触发更新<br><strong>RIPv1和RIPv2</strong><br>RIPv1为有类别路由协议，不支持VLSM和CIDR；以广播的形式发送报文；不支持认证<br>RIPv2为无类别路由协议，支持VLSM，支持路由聚合与CIDR；支持以广播或组播（224.0.0.9）方式发送报文；支持明文认证和MD5密文认证</p>
+<p>拓扑表保存<strong>所有路径</strong>；路由表保存<strong>最优路径</strong><br>周期更新，每隔30s更新路由条目，各路由器更新间隔不一定同步；广播更新，255.255.255.255；完整更新，发送整张路由表<br>距离矢量路由协议，采用周期更新，导致收敛速度慢，收敛慢会导致路由环路，主要解决方法：水平分割、路由中毒、毒性逆转、计数到无穷大、抑制计时器、触发更新<br><strong>RIPv1和RIPv2</strong><br>RIPv1为<strong>有类</strong>别路由协议，不支持VLSM和CIDR；以广播的形式发送报文；不支持认证<br>RIPv2为<strong>无类</strong>别路由协议，支持VLSM，支持路由聚合与CIDR；支持以广播或组播（224.0.0.9）方式发送报文；支持明文认证和MD5密文认证</p>
 <h2 id="4-静态路由"><a href="#4-静态路由" class="headerlink" title="4. 静态路由"></a>4. 静态路由</h2><h3 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#ip route 172.16.1.0 255.255.255.0 172.16.2.1</span></span><br></pre></td></tr></table></figure>
-<p><code>172.16.1.0 255.255.255.0</code> 目标网络号和子网掩码<br><code>172.16.2.1</code> 下一跳路由器直连接口IP，也可配置本路由外出接口<br>数据包有去有回，路由条目也有去有回，注意检查两个方向是否都有路由</p>
+<p><code>172.16.1.0 255.255.255.0</code> 目标网络号和子网掩码<br><code>172.16.2.1</code> 下一跳路由器直连接口IP，也可配置本路由外出接口<br>数据包有去有回，路由条目也<strong>有去有回</strong>，注意检查<strong>两个方向</strong>是否都有路由</p>
 <h3 id="默认路由"><a href="#默认路由" class="headerlink" title="默认路由"></a>默认路由</h3><p>默认路由，也叫缺省路由，静态路由的一种，缺省路由就是在没有找到任何匹配的具体路由条目的情况下才使用的路由。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#ip route 0.0.0.0 0.0.0.0 172.16.2.1</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="5-RIP路由协议"><a href="#5-RIP路由协议" class="headerlink" title="5. RIP路由协议"></a>5. RIP路由协议</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">R1(config)<span class="meta">#router rip </span></span><br><span class="line">R1(config-router)<span class="meta">#version 2</span></span><br><span class="line"><span class="comment">/*版本2，RIPv2*/</span></span><br><span class="line">R1(config-router)<span class="meta">#no auto-summary </span></span><br><span class="line"><span class="comment">/*rip默认是开启自动汇总的，需手动关闭*/</span></span><br><span class="line">R1(config-router)<span class="meta">#network 172.16.0.0</span></span><br><span class="line"><span class="comment">/*宣告参与RIP路由的接口*/</span></span><br><span class="line">R1(config-router)<span class="meta">#network 10.0.0.0</span></span><br><span class="line"><span class="comment">/*主类网络号*/</span></span><br></pre></td></tr></table></figure>
-<p><code>network 10.0.0.0</code> RIP的network宣告，必须写主类网络的形式,不能写子网的形式，比如10.1.1.0/24需要写10.0.0.0<br>EIGRP和RIPv2默认开启自动路由汇总，会将路由汇总到主类网络<br><strong>校验</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> ip protocols</span><br><span class="line"><span class="keyword">show</span> ip route</span><br><span class="line">debug ip rip</span><br><span class="line">undebug all</span><br><span class="line"><span class="comment">/*关闭所有debug*/</span></span><br><span class="line">debug all</span><br></pre></td></tr></table></figure></p>
-<p><code>show ip protocols</code> 可以查看更新间隔30s；AD值；可以看接口RIP版本（默认发v1，接受v1和v2）,一般需手工指定v2版本<br><code>debug all</code> 该命令会打开设备所有debug，极度危险，会使设备卡死</p>
+<p><code>network 10.0.0.0</code> RIP的network宣告，必须写<strong>主类网络</strong>的形式，不能写子网的形式，比如10.1.1.0/24需要写10.0.0.0<br>EIGRP和RIPv2<strong>默认开启自动路由汇总</strong>，会将路由汇总到主类网络<br><strong>校验</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> ip protocols</span><br><span class="line"><span class="keyword">show</span> ip route</span><br><span class="line">debug ip rip</span><br><span class="line">undebug all</span><br><span class="line"><span class="comment">/*关闭所有debug*/</span></span><br><span class="line">debug all</span><br></pre></td></tr></table></figure></p>
+<p><code>show ip protocols</code> 可以查看更新间隔30s；AD值；可以看接口RIP版本（默认发v1，接受v1和v2）,一般需手工指定v2版本<br><code>debug all</code> 该命令会打开设备所有debug，<strong>极度危险</strong>，会使<strong>设备卡死</strong></p>
 
       
     </div>
@@ -446,9 +446,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CCNA/" rel="tag"><i class="fa fa-tag"></i> CCNA</a>
-          
             <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
+          
+            <a href="/tags/CCNA/" rel="tag"><i class="fa fa-tag"></i> CCNA</a>
           
         </div>
       

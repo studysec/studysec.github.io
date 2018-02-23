@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="网络,CCNA," />
+  <meta name="keywords" content="CCNA,网络," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="前言 EIGRP的特点、度量值计算和基本配置；OSPF的特点、多区域部署、度量值和基本配置；IPv6的介绍、地址表示形式、分类和路由协议。">
-<meta name="keywords" content="网络,CCNA">
+<meta name="keywords" content="CCNA,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CCNA简明笔记 4-EIGRP、OSPF、IPv6">
 <meta property="og:url" content="http://yoursite.com/2018/02/01/CCNA简明笔记 4/index.html">
 <meta property="og:site_name" content="SecLearner">
 <meta property="og:description" content="前言 EIGRP的特点、度量值计算和基本配置；OSPF的特点、多区域部署、度量值和基本配置；IPv6的介绍、地址表示形式、分类和路由协议。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-04T13:30:30.559Z">
+<meta property="og:updated_time" content="2018-02-23T14:38:04.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CCNA简明笔记 4-EIGRP、OSPF、IPv6">
 <meta name="twitter:description" content="前言 EIGRP的特点、度量值计算和基本配置；OSPF的特点、多区域部署、度量值和基本配置；IPv6的介绍、地址表示形式、分类和路由协议。">
@@ -444,7 +444,7 @@
 </ul>
 <h2 id="3-IPv6"><a href="#3-IPv6" class="headerlink" title="3. IPv6"></a>3. IPv6</h2><p>IPv4地址中存在许多特殊用途的保留地址，而且分配不均，导致IPv4不够用；IPv6的出现主要为<strong>解决IPv4地址不够用</strong>。</p>
 <h3 id="3-1-地址表示形式"><a href="#3-1-地址表示形式" class="headerlink" title="3.1 地址表示形式"></a>3.1 地址表示形式</h3><p><strong>IPv4：</strong>4段，每段8位2进制数，共32位二进制数。<br><strong>IPv6：</strong>8段，每段4位16进制，共32位16进制，也就是128位二进制数。<br>标准格式：FEC0:0000:97DC:5BA0:0000:0000:0CC0:3EBF<br>压缩格式：FEC0:0:97DC:5BA0::CC0:3EBF<br>一个“ <strong>::</strong> ”的省略写法在一个地址IPv6地址中，最多<strong>只能出现一次</strong>。<br>前导0可以省略，后导0不可省略<br>一段<strong>0000</strong>可省略为<strong>0</strong></p>
-<h3 id="3-2-分类"><a href="#3-2-分类" class="headerlink" title="3.2 分类"></a>3.2 分类</h3><h4 id="可聚合全球单播地址"><a href="#可聚合全球单播地址" class="headerlink" title="可聚合全球单播地址"></a>可聚合全球单播地址</h4><p>相当于IPv4的<strong>公网地址</strong>，也就是IPv6公网中可以全世界范围内寻址的地址。<br>范围：<strong>2000::/3</strong>（2000是16进制，/3表示2进制前3位），其范围是：<br>0010 0000 0000 0000 …=2000:0:0:0:0:0:0:0<br>0010 1111 1111 1111 …=3FFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF</p>
+<h3 id="3-2-分类"><a href="#3-2-分类" class="headerlink" title="3.2 分类"></a>3.2 分类</h3><h4 id="可聚合全球单播地址"><a href="#可聚合全球单播地址" class="headerlink" title="可聚合全球单播地址"></a>可聚合全球单播地址</h4><p>相当于IPv4的<strong>公网地址</strong>，也就是IPv6公网中可以全世界范围内寻址的地址。<br>范围：<strong>2000::/3</strong>（2000是16进制，/3表示2进制前3位），其范围是：<br>0010 0000 0000 0000 …=2000:0:0:0:0:0:0:0<br>0011 1111 1111 1111 …=3FFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF</p>
 <h4 id="本地站点地址"><a href="#本地站点地址" class="headerlink" title="本地站点地址"></a>本地站点地址</h4><p>相当于IPv4的<strong>私有地址</strong>，私有网使用<br>范围：<strong>FEC0::/10</strong></p>
 <h4 id="本地链路地址"><a href="#本地链路地址" class="headerlink" title="本地链路地址"></a>本地链路地址</h4><p>Ripv1周期广播更新（目的IP是255.255.255.255），Ripv2组播更新（目的IP是224.0.0.9）<br>路由器开启ipv6（命令是<code>ipv6 enable</code>） 会自动生成本地链路地址，路由器发送路由更新的时候，将以出站端口的本地链路（link-local）地址作为源发送路由更新，目的是以FF打头的组播地址；在IPv6网络中，任何一个路由条目的下一跳永远都是直连的对方接口下的link-local地址。<br>该地址类型<strong>用于IPv6本地链路的管理用途，自动生成</strong>。<br>范围：<strong>FE80::/10</strong></p>
 <h4 id="未指定地址"><a href="#未指定地址" class="headerlink" title="未指定地址"></a>未指定地址</h4><p>相当于IPv4的0.0.0.0，客户端DHCP的请求包的源地址<br>范围：<strong>::/0</strong></p>
@@ -485,9 +485,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
-          
             <a href="/tags/CCNA/" rel="tag"><i class="fa fa-tag"></i> CCNA</a>
+          
+            <a href="/tags/网络/" rel="tag"><i class="fa fa-tag"></i> 网络</a>
           
         </div>
       

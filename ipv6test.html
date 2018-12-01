@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>银行门户IPv6支持情况测试</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.css" />
+    <style type="text/css"> 
+        
+
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+
+
+body {
+    font-family: "Microsoft Yahei", Arial, serif;
+    line-height: 30px;
+}
+.main_dashnumber{
+	    font-family: "Microsoft Yahei", Arial, serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+.quit_button{
+	    font-family: "Microsoft Yahei", Arial, serif;
+    font-weight: 400;
+	color:#FFF;
+	padding-left: 15px;
+}
+.sys_name{
+    font-family: "Microsoft Yahei", Arial, serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+.set-radius-zero {
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.content-wrapper {
+    min-height: 600px;
+    padding-bottom: 60px;
+}
+
+.page-head-line {
+    font-weight: 900;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F0677C;
+    text-transform: uppercase;
+    color: #F0677C;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+.login-icon {
+    height: 60px;
+width: 60px;
+padding: 13px;
+border-radius: 50%;
+font-size: 30px;
+margin-bottom: 20px;
+color: #fff;
+text-align: center;
+cursor:pointer;
+background-color:#F0677C;
+-webkit-border-radius:50%;
+    -moz-border-radius:50%;
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+/* =============================================================
+   HEADER SECTION STYLES
+ ============================================================ */
+header {
+	background-color: #C36464;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* =============================================================
+   FOOTER SECTION STYLES
+ ============================================================ */
+footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #C36464;
+}
+
+    footer a, footer a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+/* NOTICE BOARD */
+
+
+.notice-board .panel {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.notice-board ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.notice-board li {
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+    .notice-board li span {
+        margin-right: 10px;
+        border: 1px solid #DBDBDB;
+        padding: 5px;
+    }
+
+    .notice-board li a, li a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+
+
+    </style> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sys_name">银行门户IPv6支持情况测试</div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                  <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                            <div class="table-responsive">
+                                
+                                <table  id="tablelist" 		
+                                data-toggle="table"
+                                data-show-refresh="true" //显示刷新按钮
+                                data-striped="true" //	设置为 true 会有隔行变色效果
+                                data-show-toggle="true" //显示切换视图（table/card）按钮
+                                data-buttons-align="left"> 
+							<thead> 
+							<tr>               
+								<!--<th data-field="id_msg" data-sortable="true" data-order="desc">ID</th> -->
+								<th data-field="name_bank">银行</th> 
+								<th data-field="url_bank" >Url地址</th> 
+								<th data-field="aaaa_bank" >AAAA记录</th>  
+								<th data-field="webserver_bank" >Web服务器</th> 
+								<th data-field="refresh_bank" data-formatter="operateFormatter" data-events="operateEvents">刷新</th>  
+							</tr> 
+							</thead> 
+
+							</table> 
+                            </div>
+                    </div>
+                     <!-- End  Kitchen Sink -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT-WRAPPER SECTION END-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-juzhong">                
+                    2018 YaoGuiPeng
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="https://cdn.bootcss.com/jQuery-JSONP/2.4.0/jquery.jsonp.min.js"></script>
+
+    <script>
+
+    var $table_zhengce = $('#tablelist');
+    var bank_zhengce=[{"name_bank":"国家开发银行","url_bank":"http://www.cdb.com.cn/","aaaa_bank":"\e014","webserver_bank":"null"},{"name_bank":"中国进出口银行","url_bank":"http://www.eximbank.gov.cn/","aaaa_bank":"null","webserver_bank":"2null"},{"name_bank":"中国农业发展银行","url_bank":"http://www.adbc.com.cn/","aaaa_bank":"null","webserver_bank":"null"}];
+    $(function () {
+       /* $table.bootstrapTable({
+            formatLoadingMessage: function() {
+                return "请稍等，正在加载中...";
+                }});*/
+         $table_zhengce.bootstrapTable('load', bank_zhengce);
+        });
+        
+    function onBack(res){
+        alert(JSON.stringify(res));
+      }
+
+    function operateFormatter(value, row, index) {
+      return [
+      '<button type="button" class="RoleOfrefresh btn btn-default  btn-sm" style="margin-right:15px;">刷新</button>'
+      ].join('');
+      }
+
+      var proxy = function(url, callback) {
+    var state = 0;
+    var iframe = document.createElement('iframe');
+
+    // 加载跨域页面
+    iframe.src = url;
+
+    // onload事件会触发2次，第1次加载跨域页，并留存数据于window.name
+    iframe.onload = function() {
+        if (state === 1) {
+            // 第2次onload(同域proxy页)成功后，读取同域window.name中数据
+            callback(iframe.contentWindow.name);
+            destoryFrame();
+
+        } else if (state === 0) {
+            // 第1次onload(跨域页)成功后，切换到同域代理页面
+            iframe.contentWindow.location = 'http://www.domain1.com/proxy.html';
+            state = 1;
+        }
+    };
+
+    document.body.appendChild(iframe);
+
+    // 获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）
+    function destoryFrame() {
+        iframe.contentWindow.document.write('');
+        iframe.contentWindow.close();
+        document.body.removeChild(iframe);
+    }
+};
+
+
+
+
+      window.operateEvents = {
+            'click .RoleOfrefresh': function (e, value, row, index) {
+// 请求跨域b页面数据
+proxy('http://ipv6-test.com/json/webserver.php?url=www.bank-of-china.com.cn&scheme=http', function(data){
+    alert(data);
+});
+
+/*
+                $.jsonp({
+                    url: "http://ipv6-test.com/json/webserver.php?url=www.bank-of-china.com.cn&scheme=http",
+                    callbackParameter:"callback2",
+                    callback:"callback_success",
+                    success: function (data) {
+                        alert(data[0].dns_aaaa);
+                    },
+                    error: function (e) {
+                        alert(JSON.stringify(e));
+                    }
+                });*/
+
+            /*$.ajax({
+
+                type: "GET",
+                async: false,
+                url: "http://ipv6-test.com/json/webserver.php?url=www.bank-of-china.com.cn&scheme=http",
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback:"success_jsonpCallback",
+                success: function (data) {
+                    alert(data[0].dns_aaaa);
+                },
+                error: function (e) {
+                    var test = e;
+                }
+
+             type : "GET",
+            url : "http://ipv6-test.com/json/webserver.php?url=www.bank-of-china.com.cn&scheme=http",
+            //dataType : 'JSON',
+            dataType: "jsonp",  //返回类型为jsonp，实现跨域
+            data: {},
+            contentType: "application/jsonp",
+            jsonp:"callback",   //jsonp和jsonpCallBack相当于在url后添加一个参数：?callback=back
+            jsonpCallback:"onBack",   //设定回调函数的名字，传到后台，进行包装，不设定自动生成
+            success : function (data) {
+               $table_zhengce.bootstrapTable('updateRow', {
+                    index:index,
+                    row: {
+                        aaaa_bank:data.dns_aaaa
+                     }
+                     });
+                     alert(data.dns_aaaa);
+            }
+        });*/
+            }
+    };
+/*
+$('#tablelist').bootstrapTable({
+	pageSize: 15,
+	pageNumber: 1,
+	pageList: "[10, 25, 50, 100, All]",
+	type: "get",
+	dataType: "json",
+	//url: "houtai_function.php?func=queryall",
+	formatLoadingMessage: function() {
+		return "请稍等，正在加载中...";
+	},
+	error: function() {
+		alert("错误");
+	}
+})
+
+
+ $(function () {
+        //var $table = $('#tablelist');
+        //$table.bootstrapTable({data:[]});
+ 
+        $.ajax({
+            url: "houtai_function.php?func=queryall",
+            type: 'get',
+            dataType: 'json',
+            success: function (d) {
+                setInterval(function () {
+				$('#tablelist').bootstrapTable('load', d);
+                }, 2000);
+            }
+        });
+
+});*/
+
+</script>
+</body>
+</html>

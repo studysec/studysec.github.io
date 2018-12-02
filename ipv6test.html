@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" />
+    <title>银行门户IPv6支持情况测试</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.css" />
+    <style type="text/css">
+        body {
+            font-family: "Microsoft Yahei", Arial, serif;
+            line-height: 30px;
+        }
+
+        .sys_name {
+            font-family: "Microsoft Yahei", Arial, serif;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        header {
+            background-color: #C36464;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #C36464;
+        }
+
+        .panelText {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .tablename {
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            line-height: 34px;
+            color: #a71e32;
+        }
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px
+        }
+
+        @media (min-width:768px) {
+            .container {
+                width: 100%
+            }
+        }
+
+        @media (min-width:992px) {
+            .container {
+                width: 970px
+            }
+        }
+
+        @media (min-width:1200px) {
+            .container {
+                width: 1170px
+            }
+        }
+
+        .time1 {
+            text-align: left;
+            color: #a71e32;
+            margin-bottom: 10px;
+            margin-left: 5px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="sys_name">银行门户IPv6支持情况测试</div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="time1" class="time1">
+                    </div>
+
+                    <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div id="tablename">
+                            <div class="tablename pull-left">政策性银行</div>
+                        </div>
+                        <table id="tablelist1" data-toggle="table" data-show-refresh="true" data-striped="true"
+                            data-show-toggle="true" data-buttons-align="right">
+                            <thead>
+                                <tr>
+                                    <!--<th data-field="id_msg" data-sortable="true" data-order="desc">ID</th> -->
+                                    <th data-field="name_bank">银行</th>
+                                    <th data-field="url_bank">Url地址</th>
+                                    <th data-field="aaaa_bank">AAAA记录</th>
+                                    <th data-field="webserver_bank">Web服务器</th>
+                                    <th data-field="refresh_bank" data-formatter="operateFormatter" data-events="operateEvents1">刷新</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <!-- End  Kitchen Sink -->
+                    <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div id="tablename">
+                            <div class="tablename pull-left">大型商业银行</div>
+                        </div>
+                        <table id="tablelist2" data-toggle="table" data-show-refresh="true" data-striped="true"
+                            data-show-toggle="true" data-buttons-align="right">
+                            <thead>
+                                <tr>
+                                    <!--<th data-field="id_msg" data-sortable="true" data-order="desc">ID</th> -->
+                                    <th data-field="name_bank">银行</th>
+                                    <th data-field="url_bank">Url地址</th>
+                                    <th data-field="aaaa_bank">AAAA记录</th>
+                                    <th data-field="webserver_bank">Web服务器</th>
+                                    <th data-field="refresh_bank" data-formatter="operateFormatter" data-events="operateEvents2">刷新</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <!-- End  Kitchen Sink -->
+                    <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div id="tablename">
+                            <div class="tablename pull-left">股份制商业银行</div>
+                        </div>
+                        <table id="tablelist3" data-toggle="table" data-show-refresh="true" data-striped="true"
+                            data-show-toggle="true" data-buttons-align="right">
+                            <thead>
+                                <tr>
+                                    <!--<th data-field="id_msg" data-sortable="true" data-order="desc">ID</th> -->
+                                    <th data-field="name_bank">银行</th>
+                                    <th data-field="url_bank">Url地址</th>
+                                    <th data-field="aaaa_bank">AAAA记录</th>
+                                    <th data-field="webserver_bank">Web服务器</th>
+                                    <th data-field="refresh_bank" data-formatter="operateFormatter" data-events="operateEvents3">刷新</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <!-- End  Kitchen Sink -->
+                    <!--   Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div id="tablename">
+                            <div class="tablename pull-left">邮政储蓄银行</div>
+                        </div>
+                        <table id="tablelist4" data-toggle="table" data-show-refresh="true" data-striped="true"
+                            data-show-toggle="true" data-buttons-align="right">
+                            <thead>
+                                <tr>
+                                    <!--<th data-field="id_msg" data-sortable="true" data-order="desc">ID</th> -->
+                                    <th data-field="name_bank">银行</th>
+                                    <th data-field="url_bank">Url地址</th>
+                                    <th data-field="aaaa_bank">AAAA记录</th>
+                                    <th data-field="webserver_bank">Web服务器</th>
+                                    <th data-field="refresh_bank" data-formatter="operateFormatter" data-events="operateEvents4">刷新</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <!-- End  Kitchen Sink -->
+                    <div class="panel panel-default">
+                        <div class="panelText">
+                            注：<br>
+                            1.本网站仅用于部分银行门户网站域名AAAA解析和Web服务器对IPv6支持情况测试；<br>
+                            2.银行分类主要依据银监会"国内银行业金融机构"目录，网址http://www.cbrc.gov.cn/chinese/jrjg/index.html；<br>
+                            3.本网站调用的API测试点位于欧洲，如果网站没有IPv6国际路由，Web服务器可能会出现“web server is unreachable : Connection timed
+                            out”；<br>
+                            4.网页信息如有错误，请联系seclearner@163.com。
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT-WRAPPER SECTION END-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    2018 Coding By YaoGuiPeng | seclearner@163.com
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="https://cdn.bootcss.com/jQuery-JSONP/2.4.0/jquery.jsonp.min.js"></script>
+
+    <script>
+
+        var $table_zhengce = $('#tablelist1');
+        var $table_daxingshangye = $('#tablelist2');
+        var $table_gufenzhishangye = $('#tablelist3');
+        var $table_youzhengchuxu = $('#tablelist4');
+
+        //政策性银行
+        var $bank_zhengce =
+            [{ "name_bank": "国家开发银行", "url_bank": "http://www.cdb.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国进出口银行", "url_bank": "http://www.eximbank.gov.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国农业发展银行", "url_bank": "http://www.adbc.com.cn", "aaaa_bank": "-", "webserver_bank": "-" }];
+        //大型商业银行
+        var $bank_daxingshangye =
+            [{ "name_bank": "中国工商银行", "url_bank": "http://www.icbc.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国工商银行", "url_bank": "http://www.icbc-ltd.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国农业银行", "url_bank": "http://www.abchina.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国银行", "url_bank": "http://www.boc.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国银行", "url_bank": "http://www.bankofchina.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国银行", "url_bank": "http://www.bank-of-china.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国建设银行", "url_bank": "http://www.ccb.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "交通银行", "url_bank": "http://www.bankcomm.com", "aaaa_bank": "-", "webserver_bank": "-" }];
+        //股份制商业银行
+        var $bank_gufenzhishangye =
+            [{ "name_bank": "中信银行", "url_bank": "http://www.ecitic.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国光大银行", "url_bank": "http://www.cebbank.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "华夏银行", "url_bank": "http://www.hxb.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "中国民生银行", "url_bank": "http://www.cmbc.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "招商银行", "url_bank": "http://www.cmbchina.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "兴业银行", "url_bank": "https://www.cib.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "广发银行", "url_bank": "http://www.cgbchina.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "平安银行", "url_bank": "http://bank.pingan.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "上海浦东发展银行", "url_bank": "http://www.spdb.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "恒丰银行", "url_bank": "http://www.hfbank.com.cn", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "浙商银行", "url_bank": "http://www.czbank.com", "aaaa_bank": "-", "webserver_bank": "-" },
+            { "name_bank": "渤海银行", "url_bank": "http://www.cbhb.com.cn", "aaaa_bank": "-", "webserver_bank": "-" }];
+        //邮政储蓄银行
+        var $bank_youzhengchuxu =
+            [{ "name_bank": "中国邮政储蓄银行", "url_bank": "http://www.psbc.com", "aaaa_bank": "-", "webserver_bank": "-" }];
+
+        var $ipv6TestApiUrl = "http://176.122.156.143/ipv6test.php?url=";
+
+
+
+
+
+        $(function () {
+            $table_zhengce.bootstrapTable('load', $bank_zhengce);
+            $table_daxingshangye.bootstrapTable('load', $bank_daxingshangye);
+            $table_gufenzhishangye.bootstrapTable('load', $bank_gufenzhishangye);
+            $table_youzhengchuxu.bootstrapTable('load', $bank_youzhengchuxu);
+
+            $table_zhengce.on("	refresh.bs.table", function () {
+                refreshTable($table_zhengce, $bank_zhengce);
+            })
+            $table_daxingshangye.on("	refresh.bs.table", function () {
+                refreshTable($table_daxingshangye, $bank_daxingshangye);
+            })
+            $table_gufenzhishangye.on("	refresh.bs.table", function () {
+                refreshTable($table_gufenzhishangye, $bank_gufenzhishangye);
+            })
+            $table_youzhengchuxu.on("	refresh.bs.table", function () {
+                refreshTable($table_youzhengchuxu, $bank_youzhengchuxu);
+            })
+        });
+
+        function refreshTable(table, rows) {
+            for (var i = 0; i < rows.length; i++) {
+                refreshTableRow(table, rows[i], i);
+            }
+        }
+        function refreshTableRow(table, row, i) {
+            table.bootstrapTable('updateRow', {
+                index: i,
+                row: {
+                    aaaa_bank: "loading...",
+                    webserver_bank: "loading..."
+                }
+            });
+
+            $.ajax({
+                type: "GET",
+                url: $ipv6TestApiUrl + $.trim(splitStr(row['url_bank'])[2]) + "&scheme=" + $.trim(splitStr(row['url_bank'])[1]),
+                dataType: "json",
+                success: function (data) {
+                    var newData = refreshData(data);
+                    table.bootstrapTable('updateRow', {
+                        index: i,
+                        row: {
+                            aaaa_bank: newData[0],
+                            webserver_bank: newData[1]
+                        }
+                    });
+                },
+                error: function (e) {
+                    var test = e;
+                }
+            });
+        }
+
+        function operateFormatter(value, row, index) {
+            return [
+                '<button type="button" class="RoleOfrefresh btn btn-default  btn-sm" style="margin-right:15px;">刷新</button>'
+            ].join('');
+        }
+
+        //切割URL网址
+        function splitStr(res) {
+            var patt1 = /(\w+):\/\/([^/]+)/;
+            var str = res.match(patt1);
+            return str;
+        }
+        /*正则表达式将返回数组，有3个元素分别是：
+        str[0]=https://www.runoob.com
+        str[1]=https
+        str[2]=www.runoob.com
+        */
+        //refreshData()函数用于更新aaaa_bank、webserver_bank
+        function refreshData(data) {
+            var aaaa = "-";
+            var webserver = "-";
+            if (data.dns_aaaa == null) {
+                aaaa = "<span class='glyphicon glyphicon-remove' style='color:red'></span>";
+                webserver = "<span class='glyphicon glyphicon-remove' style='color:red'></span> " + data.error;
+            } else {
+                aaaa = "<span class='glyphicon glyphicon-ok' style='color:green'></span> " + data.dns_aaaa;
+                var err = data.error;
+                if (err != undefined) {
+                    webserver = "<span class='glyphicon glyphicon-remove' style='color:red'></span> " + data.error;
+                } else {
+                    webserver = "<span class='glyphicon glyphicon-ok' style='color:green'></span> " + data.server;
+                }
+            }
+            var newData = new Array(aaaa, webserver);
+            return newData;
+        }
+        //政策性银行
+        window.operateEvents1 = {
+            'click .RoleOfrefresh': function (e, value, row, index) {
+                refreshTableRow($table_zhengce, row, index);
+            }
+        };
+        //大型商业银行
+        window.operateEvents2 = {
+            'click .RoleOfrefresh': function (e, value, row, index) {
+                refreshTableRow($table_daxingshangye, row, index);
+            }
+        };
+        //股份制商业银行
+        window.operateEvents3 = {
+            'click .RoleOfrefresh': function (e, value, row, index) {
+                refreshTableRow($table_gufenzhishangye, row, index);
+            }
+        };
+        //邮政储蓄银行
+        window.operateEvents4 = {
+            'click .RoleOfrefresh': function (e, value, row, index) {
+                refreshTableRow($table_youzhengchuxu, row, index);
+            }
+        };
+
+
+        function mytime() {
+            var a = new Date();
+            var b = a.toLocaleTimeString();
+            var c = a.toLocaleDateString();
+            document.getElementById("time1").innerHTML = c + "&nbsp" + b;
+        }
+        setInterval(function () { mytime() }, 1000);
+    </script>
+</body>
+
+</html>
